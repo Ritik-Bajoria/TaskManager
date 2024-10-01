@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            /* Include padding and border in element's total width and height */
+            margin: 0;
+            /* Reset margin */
+            padding: 0;
+            /* Reset padding */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            /* Light gray background */
+            display: flex;
+            /* Enable Flexbox */
+            flex-direction: column;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+            height: 100vh;
+            /* Full viewport height */
+        }
+
+        h1 {
+            color: #24A13B;
+            /* Green color for the heading */
+            margin-bottom: 20px;
+            /* Space below heading */
+        }
+
+        /* Form Styles */
+        form {
+            background: white;
+            /* White background for the form */
+            padding: 2rem;
+            /* Padding for form */
+            border-radius: 8px;
+            /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
+            width: 100%;
+            /* Full width on small screens */
+            max-width: 400px;
+            /* Max width for larger screens */
+            display: flex;
+            /* Enable Flexbox for form layout */
+            flex-direction: column;
+            /* Stack children vertically */
+        }
+
+        /* Label Styles */
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            /* Space below label */
+        }
+
+        /* Input Styles */
+        input {
+            width: 100%;
+            /* Full width */
+            padding: 10px;
+            /* Padding for input */
+            margin-bottom: 20px;
+            /* Space below input */
+            border: 1px solid #ccc;
+            /* Light gray border */
+            border-radius: 4px;
+            /* Rounded corners */
+        }
+
+        /* Button Styles */
+        button {
+            background-color: #24A13B;
+            /* Green button */
+            color: white;
+            /* White text */
+            border: none;
+            /* Remove default border */
+            padding: 10px;
+            /* Padding for button */
+            border-radius: 4px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            font-size: 16px;
+            /* Font size */
+            transition: background-color 0.3s;
+            /* Smooth transition for hover effect */
+        }
+
+        button:hover {
+            background-color: #218a32;
+            /* Darker green on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            form {
+                padding: 1rem;
+                /* Reduce padding on smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form method="POST"> <!-- The form will send request to the server using POST method  -->
+        <label>Email</label>
+        <input type="email" required name="email" /><br>
+        <label>Password</label>
+        <input type="password" required name="password" /><br>
+        <button type="submit">Login</button>
+    </form>
+
+</body>
+
+</html>

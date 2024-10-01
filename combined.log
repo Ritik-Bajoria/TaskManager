@@ -1,0 +1,115 @@
+9/30/2024 3:37:44 PM [INFO]:  App started on process id:18936
+9/30/2024 3:37:44 PM [INFO]:  Server is listening on port 3000
+9/30/2024 3:37:44 PM [INFO]:  Connected to mongoDB database
+9/30/2024 3:37:54 PM [INFO]:  SIGINT signal received: closing HTTP server
+9/30/2024 3:37:54 PM [INFO]:  Mongoose connection is closed
+9/30/2024 3:37:54 PM [WARN]:  HTTP server closed
+
+9/30/2024 3:38:20 PM [INFO]:  App started on process id:84
+9/30/2024 3:38:20 PM [INFO]:  Server is listening on port 3000
+9/30/2024 3:38:20 PM [INFO]:  Connected to mongoDB database
+9/30/2024 3:38:27 PM [INFO]:  SIGINT signal received: closing HTTP server
+9/30/2024 3:38:27 PM [INFO]:  Mongoose connection is closed
+9/30/2024 3:38:27 PM [WARN]:  HTTP server closed
+
+9/30/2024 3:43:46 PM [INFO]:  App started on process id:23816
+9/30/2024 3:43:47 PM [INFO]:  Server is listening on port 3000
+9/30/2024 3:43:47 PM [INFO]:  Connected to mongoDB database
+9/30/2024 3:43:50 PM [INFO]:  SIGINT signal received: closing HTTP server
+9/30/2024 3:43:50 PM [INFO]:  Mongoose connection is closed
+9/30/2024 3:43:50 PM [WARN]:  HTTP server closed
+
+10/1/2024 11:31:39 AM [INFO]:  App started on process id:3928
+10/1/2024 11:31:40 AM [INFO]:  Server is listening on port 3000
+10/1/2024 11:31:40 AM [INFO]:  Connected to mongoDB database
+10/1/2024 11:31:42 AM [INFO]:  SIGINT signal received: closing HTTP server
+10/1/2024 11:31:42 AM [INFO]:  Mongoose connection is closed
+10/1/2024 11:31:42 AM [WARN]:  HTTP server closed
+
+10/1/2024 5:57:55 AM [INFO]:  App started on process id:17
+10/1/2024 5:58:02 AM [INFO]:  Server is listening on port 3000
+10/1/2024 5:58:32 AM [ERROR]:  Mongo Error
+10/1/2024 5:59:50 AM [INFO]:  SIGINT signal received: closing HTTP server
+10/1/2024 5:59:50 AM [INFO]:  Mongoose connection is closed
+10/1/2024 5:59:50 AM [WARN]:  HTTP server closed
+
+10/1/2024 6:00:56 AM [INFO]:  App started on process id:23
+10/1/2024 6:01:03 AM [INFO]:  Server is listening on port 3000
+10/1/2024 6:03:56 AM [INFO]:  App started on process id:17
+10/1/2024 6:04:03 AM [INFO]:  Server is listening on port 3000
+10/1/2024 6:04:33 AM [ERROR]:  Mongo Error
+10/1/2024 6:04:41 AM [INFO]:  App started on process id:45
+10/1/2024 6:13:17 AM [INFO]:  App started on process id:17
+10/1/2024 6:13:23 AM [INFO]:  Server is listening on port 3000
+10/1/2024 6:13:53 AM [ERROR]:  Mongo Error
+10/1/2024 6:15:05 AM [INFO]:  App started on process id:23
+10/1/2024 6:15:11 AM [INFO]:  Server is listening on port 3000
+10/1/2024 6:15:12 AM [INFO]:  App started on process id:41
+10/1/2024 6:15:41 AM [ERROR]:  Mongo Error
+10/1/2024 6:16:07 AM [INFO]:  App started on process id:79
+10/1/2024 6:19:40 AM [INFO]:  App started on process id:110
+10/1/2024 6:21:43 AM [INFO]:  App started on process id:23
+10/1/2024 6:21:49 AM [INFO]:  Server is listening on port 3000
+10/1/2024 6:22:19 AM [ERROR]:  Mongo Error
+10/1/2024 12:08:28 PM [INFO]:  App started on process id:18652
+10/1/2024 12:08:28 PM [INFO]:  Server is listening on port 3000
+10/1/2024 12:08:28 PM [INFO]:  Connected to mongoDB database
+10/1/2024 12:08:31 PM [INFO]:  SIGINT signal received: closing HTTP server
+10/1/2024 12:08:31 PM [INFO]:  Mongoose connection is closed
+10/1/2024 12:08:31 PM [WARN]:  HTTP server closed
+
+10/1/2024 6:25:50 AM [INFO]:  App started on process id:17
+10/1/2024 6:25:56 AM [INFO]:  Server is listening on port 3000
+10/1/2024 6:26:26 AM [ERROR]:  Mongo Error
+10/1/2024 6:26:39 AM [INFO]:  App started on process id:45
+10/1/2024 12:16:46 PM [INFO]:  App started on process id:28136
+10/1/2024 12:16:46 PM [INFO]:  Server is listening on port 3000
+10/1/2024 12:16:46 PM [INFO]:  Connected to mongoDB database
+10/1/2024 12:17:20 PM [INFO]:  Request from ::1 at POST /api/user/login
+10/1/2024 12:17:20 PM [INFO]:  user 66f394e6b65625fe05520358 has logged in
+10/1/2024 12:17:20 PM [INFO]:  Request from ::1 at GET /api/user/tasks
+10/1/2024 12:17:48 PM [INFO]:  Request from ::1 at PATCH /api/user/tasks/66f6777b9da7e01ac101f29e
+10/1/2024 12:17:49 PM [INFO]:  Request from ::1 at GET /api/user/tasks
+10/1/2024 12:18:00 PM [INFO]:  Request from ::1 at PATCH /api/user/tasks/66f6777b9da7e01ac101f29e
+10/1/2024 12:18:00 PM [INFO]:  Request from ::1 at GET /api/user/tasks
+10/1/2024 12:18:30 PM [INFO]:  Request from ::1 at POST /api/user/tasks
+10/1/2024 12:18:30 PM [INFO]:  Request from ::1 at GET /api/user/tasks
+10/1/2024 12:18:38 PM [INFO]:  Request from ::1 at PATCH /api/user/tasks/66fb97ba06687c4fd4d656cf
+10/1/2024 12:18:38 PM [INFO]:  Request from ::1 at GET /api/user/tasks
+10/1/2024 12:20:56 PM [INFO]:  SIGINT signal received: closing HTTP server
+10/1/2024 12:20:56 PM [INFO]:  Mongoose connection is closed
+10/1/2024 12:20:56 PM [WARN]:  HTTP server closed
+
+10/1/2024 1:00:28 PM [INFO]:  App started on process id:25100
+10/1/2024 1:00:48 PM [INFO]:  App started on process id:22616
+10/1/2024 1:00:49 PM [INFO]:  Server is listening on port 3000
+10/1/2024 1:00:49 PM [INFO]:  Connected to mongoDB database
+10/1/2024 1:00:50 PM [INFO]:  SIGINT signal received: closing HTTP server
+10/1/2024 1:00:50 PM [INFO]:  Mongoose connection is closed
+10/1/2024 1:00:50 PM [WARN]:  HTTP server closed
+
+10/1/2024 3:34:54 PM [INFO]:  App started on process id:19872
+10/1/2024 3:34:55 PM [INFO]:  SIGTERM signal received: closing HTTP server
+10/1/2024 3:35:56 PM [INFO]:  App started on process id:6880
+10/1/2024 3:35:56 PM [INFO]:  SIGINT signal received: closing HTTP server
+10/1/2024 3:36:14 PM [INFO]:  App started on process id:24072
+10/1/2024 3:36:14 PM [INFO]:  Server is listening on port 3000
+10/1/2024 3:36:14 PM [INFO]:  Connected to mongoDB database
+10/1/2024 3:36:17 PM [INFO]:  SIGINT signal received: closing HTTP server
+10/1/2024 3:36:17 PM [INFO]:  Mongoose connection is closed
+10/1/2024 3:36:17 PM [WARN]:  HTTP server closed
+
+10/1/2024 3:45:57 PM [INFO]:  App started on process id:17404
+10/1/2024 3:45:58 PM [INFO]:  Server is listening on port 3000
+10/1/2024 3:45:58 PM [INFO]:  Connected to mongoDB database
+10/1/2024 3:46:06 PM [INFO]:  Request from ::1 at GET /api/user/tasks
+10/1/2024 3:46:06 PM [INFO]:  Request from ::1 at GET /api/user/login
+10/1/2024 3:46:06 PM [INFO]:  user is in login page
+10/1/2024 3:46:10 PM [INFO]:  Request from ::1 at POST /api/user/login
+10/1/2024 3:46:10 PM [INFO]:  user 66f394e6b65625fe05520358 has logged in
+10/1/2024 3:46:10 PM [INFO]:  Request from ::1 at GET /api/user/tasks
+10/1/2024 3:46:17 PM [INFO]:  SIGINT signal received: closing HTTP server
+10/1/2024 3:46:18 PM [INFO]:  SIGINT signal received: closing HTTP server
+10/1/2024 3:47:04 PM [INFO]:  Mongoose connection is closed
+10/1/2024 3:47:04 PM [WARN]:  HTTP server closed
+

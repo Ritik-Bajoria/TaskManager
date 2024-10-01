@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #24A13B;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+
+        /* Main Content Styles */
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        main h2 {
+            text-align: center;
+            color: #24A13B;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Form Styles */
+        form,
+        .task-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        form input,
+        form select {
+            flex: 1 1 45%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            flex: 1 1 100%;
+            padding: 0.75rem;
+            background-color: #24A13B;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1d8e33;
+        }
+
+        /* Task List Styles */
+        h3 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        ul li:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        ul li strong {
+            color: #24A13B;
+        }
+
+        ul li br {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #24A13B;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin:auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content input,
+        .modal-content textarea,
+        .modal-content select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .modal-content .save-btn {
+            background-color: #24A13B;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .modal-content .save-btn:hover {
+            background-color: #1d8e33;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Task Manager</h1>
+    </header>
+
+    <main>
+        <h2>Manage Your Tasks</h2>
+
+        <!-- Add Task Form -->
+        <form action="/api/user/tasks" method="POST">
+            <input type="text" name="taskName" placeholder="Task Title" required>
+            <select name="taskStatus">
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <input type="text" name="taskDescription" placeholder="Task Description" required>
+            <input type="date" name="taskStartDate" required>
+            <input type="date" name="taskDueDate" required>
+            <button type="submit">Add Task</button>
+        </form>
+        <!-- Display Tasks -->
+        <h3>Your Tasks:</h3>
+        <ul>
+            <% tasks.forEach(task=> { %>
+                <li>
+                    <strong>Title:</strong>
+                    <%= task.taskTitle %> <br>
+                        <strong>Status:</strong>
+                        <%= task.taskStatus %> <br>
+                            <strong>Description:</strong>
+                            <%= task.taskDescription %> <br>
+                                <strong>Start Date:</strong>
+                                <%= task.taskStartDate %> <br>
+                                    <strong>Due Date:</strong>
+                                    <%= task.taskDueDate %> <br>
+
+                                        <!-- Edit and Delete Buttons -->
+                                        <div class="task-actions">
+                                            <!-- Edit button -->
+                                            <button class="edit-btn"
+                                                onclick="openEditModal('<%= task._id %>', '<%= task.taskTitle %>', '<%= task.taskDescription %>', '<%= task.taskStatus %>', '<%= task.taskStartDate %>', '<%= task.taskDueDate %>')">Edit</button>
+
+                                            <!-- Delete button -->
+                                            <button class="delete-btn"
+                                                onclick="deleteTask('<%= task._id %>')">Delete</button>
+                                        </div>
+                                        <!-- Edit Modal -->
+                                        <div id="editModal" class="modal">
+                                            <div class="modal-content">
+                                                <span class="close" onclick="closeModal()">&times;</span>
+                                                <h2>Edit Task</h2>
+                                                <form id="editForm">
+                                                    <input type="text" id="editTaskTitle" placeholder="Task Title"
+                                                        required>
+                                                    <textarea id="editTaskDescription" placeholder="Task Description"
+                                                        required></textarea>
+                                                    <select id="editTaskStatus">
+                                                        <option value="Pending">Pending</option>
+                                                        <option value="In Progress">In Progress</option>
+                                                        <option value="Completed">Completed</option>
+                                                    </select>
+                                                    <input type="date" id="editTaskStartDate" required>
+                                                    <input type="date" id="editTaskDueDate" required>
+                                                    <button type="submit" class="save-btn">Save Changes</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                </li>
+                <% }); %>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Task Manager</p>
+    </footer>
+</body>
+<script>
+    function openEditModal(taskId, title, description, status, startDate, dueDate) {
+        // Open modal
+        document.getElementById('editModal').style.display = 'block';
+
+        // Pre-fill modal form fields
+        document.getElementById('editTaskTitle').value = title;
+        document.getElementById('editTaskDescription').value = description;
+        document.getElementById('editTaskStatus').value = status;
+        document.getElementById('editTaskStartDate').value = startDate;
+        document.getElementById('editTaskDueDate').value = dueDate;
+
+        // Handle form submission
+        document.getElementById('editForm').onsubmit = function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Collect updated task data
+            const updatedTask = {
+                taskTitle: document.getElementById('editTaskTitle').value,
+                taskDescription: document.getElementById('editTaskDescription').value,
+                taskStatus: document.getElementById('editTaskStatus').value,
+                taskStartDate: document.getElementById('editTaskStartDate').value,
+                taskDueDate: document.getElementById('editTaskDueDate').value
+            };
+
+            // Send PATCH request
+            fetch(`/api/user/tasks/${taskId}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedTask)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Reload the page or update the UI
+                        location.reload();
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        };
+    }
+
+    function closeModal() {
+        document.getElementById('editModal').style.display = 'none';
+    }
+
+    // Handle outside click to close modal
+    // window.onclick = function (event) {
+    //     const modal = document.getElementById('editModal');
+    //     if (event.target == modal) {
+    //         modal.style.display = 'none';
+    //     }
+    // }
+
+    function deleteTask(taskId) {
+        if (confirm('Are you sure you want to delete this task?')) {
+            fetch(`/api/user/tasks/${taskId}`, {
+                method: 'DELETE'
+            }).then(response => {
+                if (response.ok) {
+                    // Reload or update the UI after deletion
+                    location.reload();
+                }
+            }).catch(error => console.error('Error:', error));
+        }
+    }
+</script>
+
+</html>
